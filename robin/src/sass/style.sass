@@ -1,0 +1,123 @@
+@import _mixin
+@import _variables
+*
+    box-sizing: border-box
+    margin: 0
+html
+    font-family: "Sen", sans-serif
+    scroll-behavior: smooth
+a 
+    text-decoration: none
+.container_grid
+    max-width: 1296px
+    width: 100%
+    margin: 0 auto
+    display: grid
+    grid-template-columns: 1fr
+    // grid-template-rows: min(88px) min(814px) min(715px) min(600px) min(664px) min(140px) min(2201px) min(600px) min(1248px) min(2722px) min(959px) min(731px) min(442px)
+    grid-row-gap: 5px
+.header
+    width: 100%
+    background: linear-gradient(to right, $base_black 40%, $level_1 30%)
+    .header_menu
+        display: grid
+        grid-template-columns: 844px 1fr
+        grid-template-rows: min(88px)
+        align-items: center
+        .menu_logo
+            grid-column: 1 
+        .menu_nav
+            grid-column: 2
+            display: flex
+            justify-content: space-between
+            overflow: hidden
+            a
+                @include pargraph_small_web
+                color: $text
+                transition: all .4s ease
+                &:hover
+                    padding: 17px 17px
+                    background-color: $primary
+                    transform: scale(1.02)
+                &:active
+                    background-color: $pink_accent
+.main_page
+    width: 100%
+    background: linear-gradient(to right, $base_black 40%, $level_1 30%)
+    .main_content
+        display: grid
+        grid-template-columns: 568px 1fr
+        grid-template-rows: 100px 500px 264px
+        // align-items: center
+        .main_img
+            grid-column: 1 / 2
+            grid-row: 2 / 2 span
+            display: flex
+            justify-content: center
+            flex-direction: row-reverse
+            img
+                // width: 100%
+                z-index: 0
+        .main_title
+            grid-column: 2 / 2
+            grid-row: 2 / 3
+            display: flex
+            align-items: flex-start
+            h1
+                z-index: 1
+                @include h1_web
+                color: $text
+        .main_subtitle 
+            grid-column: 2 / 2
+            grid-row: 2 / 3 
+            display: flex
+            align-items: flex-end
+            p
+                z-index: 1
+                @include pargraph_web
+                color: $text
+.work
+    width: 100%
+    background-color: $base_black              
+    .work_content
+        display: grid
+        grid-template-columns: repeat(3, 432px)
+        grid-template-rows: 255px 208px 330px
+        .work_subtitle
+            grid-column: 1 / 3
+            grid-row: 1 / 3
+            display: flex
+            align-items: center
+            p 
+                @include overline
+                color: $label
+        .work_title
+            grid-column: 1 / 3
+            grid-row: 2 / 2 span
+            h2
+                @include h2_web
+                color: $text
+        .work_inner
+            grid-column: 1 / 3 span
+            grid-row: 3 / 3 span
+            display: flex
+            align-items: center
+            justify-content: space-between
+            p:first-child
+                @include label
+                color: $label
+            h3
+                @include h3_web
+                color: $text
+                .green
+                    color: $green_accent
+                .blue
+                    color: $blue_accent
+                .pink
+                    color: $pink_accent
+            p
+                @include pargraph_web
+                color: $dark_grey
+
+
+        
