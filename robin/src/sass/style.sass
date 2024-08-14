@@ -250,18 +250,39 @@ ul
                 p 
                     @include pargraph_small_web 
                     color: $light_grey
-.marquee
+.slider
+    padding-top: 120px
     min-height: 140px
     background-color: $base_black
-    .marquee_items
+    overflow: hidden
+    .slider_items
         display: flex
-        justify-content: space-between
-        align-items: center
+        position: relative
+        animation: slider 17s linear infinite reverse
+        &::after
+            content: ''
+            display: block
+            width: 340px
+            height: 100%
+            position: absolute
+            left: 30%
+            top: 0
+            flex-shrink: 0
         .item
-            width: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+            flex: 0 auto
+            width: 340px
             min-height: 140px
-            border: 1px solid $blue_accent
-            a 
-                display: flex
-                align-items: center
-
+            border: 1px solid $dark_grey
+            transition: all .5s ease
+            &:hover
+                transform: scale(1.2)
+                img
+                    width: 80px
+@keyframes slider
+    0%
+        transform: translateX(120%)
+    100%
+        transform: translateX(-120%)
