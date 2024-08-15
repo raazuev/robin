@@ -27,6 +27,12 @@ ul
             grid-row: 1
             display: flex
             align-items: center
+            a
+                z-index: 2
+                position: fixed
+                transform: scale(1)
+            body.scrolled > a
+                transform: scale(0.8)
         .menu_nav
             grid-column: 3 / 3
             grid-row: 1
@@ -106,7 +112,8 @@ ul
                 &:hover
                     background-color: $blue_accent
                     padding: 10px
-                    border-radius: 10px                
+                    border-radius: 10px
+                    color: $peach_accent               
         .company_title
             grid-column: 1 / 2 span
             grid-row: 2 
@@ -224,6 +231,7 @@ ul
                 color: $light_grey
                 transition: all .5s ease
                 &:hover
+                    transform: scale(1.08)
                     color: $green_accent
         .skillset_inner
             grid-column: 2 
@@ -275,14 +283,17 @@ ul
                 transform: scale(1.1)
                 border: 8px solid
                 border-color: $blue_accent
+            &:active 
+                transform: scaleX(1.2)
 .work
-    padding-top: 30px
+    padding-top: 100px
     min-height: 2201px
     background-color: $base_black
     .work_content
         display: grid
         grid-template-columns: 50% 50%
-        grid-auto-rows: 100px 300px 500px 500px 200px
+        grid-auto-rows: 20px 210px 500px 500px 645px
+        gap: 20px
         grid-row-gap: 17px
         .work_subtitle
             grid-column: 1 
@@ -294,6 +305,12 @@ ul
                 @include overline
                 color: $light_grey
                 text-transform: uppercase
+                transition: all .5s ease
+                &:hover
+                    background-color: $blue_accent
+                    padding: 10px
+                    border-radius: 10px
+                    color: $peach_accent 
         .work_title 
             grid-column: 1 
             grid-row: 2
@@ -306,10 +323,71 @@ ul
         .work_items_left
             grid-column: 1 
             grid-row: 3 / 4 span
+            min-height: 830px
+            display: flex
+            flex-direction: column
+            gap: 20px
+            .work_item
+                min-height: 830px
+                display: flex
+                justify-content: center
+                flex-wrap: wrap
+                flex-direction: row
+                background-color: $level_1
+                .work_img
+                    width: 100%
+                    height: auto
+                    object-fit: contain
+                    img
+                        width: auto
+                        height: 100%
+                        object-fit: cover
+                h3
+                    @include h3_web
+                    color: $text
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                p
+                    @include pargraph_web
+                    color: $dark_grey
+
         .work_items_right
             grid-column: 2 
             grid-row: 1 / 4 span
+            max-height: 830px
+            display: flex
+            flex-direction: column
+            gap: 20px
             .work_item
-                img 
-                    min-height: 620px
+                min-height: 830px
+                display: flex
+                justify-content: center
+                flex-wrap: wrap
+                flex-direction: row
+                background-color: $level_1
+                img
+                    width: 100%
+                    max-height: 620px
                     object-fit: cover
+                h3
+                    @include h3_web
+                    color: $text
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                p
+                    @include pargraph_web
+                    color: $dark_grey
+        .work_btn
+            grid-column: 2
+            grid-row: 5
+            display: flex
+            justify-content: center
+            align-items: flex-end
+            a
+                @include button
+                color: $text
+                transition: all .5s ease
+
+                
