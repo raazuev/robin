@@ -251,38 +251,65 @@ ul
                     @include pargraph_small_web 
                     color: $light_grey
 .slider
-    padding-top: 120px
-    min-height: 140px
+    padding: 10px
+    min-height: 180px
     background-color: $base_black
     overflow: hidden
+    position: relative
     .slider_items
         display: flex
-        position: relative
-        animation: slider 17s linear infinite reverse
-        &::after
-            content: ''
-            display: block
-            width: 340px
-            height: 100%
-            position: absolute
-            left: 30%
-            top: 0
-            flex-shrink: 0
+        justify-content: space-between
+        align-items: center
+        position: absolute
+        transform: translateX(-34%)
+        gap: 23px
         .item
             display: flex
-            align-items: center
             justify-content: center
-            flex: 0 auto
-            width: 340px
+            align-items: center
+            min-width: 400px
             min-height: 140px
             border: 1px solid $dark_grey
             transition: all .5s ease
             &:hover
-                transform: scale(1.2)
-                img
-                    width: 80px
-@keyframes slider
-    0%
-        transform: translateX(120%)
-    100%
-        transform: translateX(-120%)
+                transform: scale(1.1)
+                border: 8px solid
+                border-color: $blue_accent
+.work
+    padding-top: 30px
+    min-height: 2201px
+    background-color: $base_black
+    .work_content
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-auto-rows: 100px 300px 500px 500px 200px
+        grid-row-gap: 17px
+        .work_subtitle
+            grid-column: 1 
+            grid-row: 1
+            display: flex
+            justify-content: flex-start
+            align-items: flex-end
+            p 
+                @include overline
+                color: $light_grey
+                text-transform: uppercase
+        .work_title 
+            grid-column: 1 
+            grid-row: 2
+            display: flex
+            justify-content: flex-start
+            align-items: flex-start
+            h2 
+                @include h2_web 
+                color: $text
+        .work_items_left
+            grid-column: 1 
+            grid-row: 3 / 4 span
+        .work_items_right
+            grid-column: 2 
+            grid-row: 1 / 4 span
+            .work_item
+                img 
+                    min-height: 620px
+                    object-fit: cover
