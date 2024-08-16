@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rufina:wght@400;700&family=Sen:wght@400..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
+    <header id="menu" class="header">
         <div class="container">
             <nav class="header_content">
                 <div class="menu_logo">
@@ -265,14 +265,16 @@
                         <div class="work_img">
                             <img src="img/work/work_item.jpg" alt="work">
                         </div>
-                        <h3>
-                            Restaurant Website Design
-                        </h3>
-                        <p>
-                            I worked with the guys at CBRE to redesign their entire website <br> 
-                            and mobile app fro both Android and iOS. This project lasted for 4 <br> 
-                            months and was a very challenging one.
-                        </p>
+                        <div class="work_descr_text">
+                            <h3>
+                                Restaurant Website Design
+                            </h3>
+                            <p>
+                                I worked with the guys at CBRE to redesign their entire website <br> 
+                                and mobile app fro both Android and iOS. This project lasted for 4 <br> 
+                                months and was a very challenging one.
+                            </p>
+                        </div>
                     </div>
                     <div class="work_item">
                         <div class="work_img">
@@ -290,7 +292,9 @@
                 </div>
                 <div class="work_items_right">
                     <div class="work_item">
-                        <img src="img/work//work_item3.jpg" alt="work">
+                        <div class="work_img">
+                            <img src="img/work//work_item3.jpg" alt="work">
+                        </div>
                         <h3>
                             Restaurant Website Design
                         </h3>
@@ -301,7 +305,9 @@
                         </p>
                     </div>
                     <div class="work_item">
-                        <img src="img/work/work_item4.jpg" alt="work">
+                        <div class="work_img">
+                            <img src="img/work/work_item4.jpg" alt="work">
+                        </div>
                         <h3>
                             Restaurant Website Design
                         </h3>
@@ -346,23 +352,25 @@
     </section>
 
     <section class="dribbble">
-        <div class="conteiner">
+        <div class="container">
             <div class="dribbble_content">
-                <div class="drib_title">
-                    <h2>
-                        Dribbble
-                    </h2>
+                <div class="drib_main_text">
+                    <div class="drib_title">
+                        <h2>
+                            Dribbble
+                        </h2>
+                    </div>
+                    <div class="drib_subtitle">
+                        <p>
+                            Each dribbble shot is made with love and care. Do check out my work on <br> 
+                            Dribbble. Likes and comments are appreciated.
+                        </p>
+                    </div>
+                    <div class="drib_btn">
+                        <a href="#">Follow me on Dribbble</a>
+                    </div>
                 </div>
-                <div class="drib_subtitle">
-                    <p>
-                        Each dribbble shot is made with love and care. Do check out my work on <br> 
-                        Dribbble. Likes and comments are appreciated.
-                    </p>
-                </div>
-                <div class="drib_btn">
-                    <a href="#">Follow me on Dribbble</a>
-                </div>
-                <div class="drip_img">
+                <div class="drib_img">
                     <img src="img/dribbble_bg.png" alt="dribbble">
                 </div>
             </div>
@@ -372,67 +380,81 @@
     <section class="about">
         <div class="container">
             <div class="about_content">
-                <div class="about_title">
-                    <h2>
-                        This is what people <br> 
-                        say about me
-                    </h2>
-                </div>
-                <div class="about_subtitle">
-                    <p>
-                        Here are a few lines from people who I have worked with over the <br> 
-                        past 8+ years in my design career.
-                    </p>
-                </div>
-                <div class="about_btn">
-                    <a href="#">See all testimonials</a>
+                <div class="about_main_text">
+                    <div class="about_title">
+                        <h2>
+                            This is what people <br> 
+                            say about me
+                        </h2>
+                    </div>
+                    <div class="about_subtitle">
+                        <p>
+                            Here are a few lines from people who I have worked with over the <br> 
+                            past 8+ years in my design career.
+                        </p>
+                    </div>
+                    <div class="about_btn">
+                        <a href="#">See all testimonials</a>
+                    </div>
                 </div>
                 <div class="about_inner">
                     <div class="about_item">
-                        <img src="img/about_bg.jpg" alt="about me">
-                        <h3>
-                            ‘’Robin is one of the best designers I have <br> 
-                            worked with in my entire life. He is a <br> 
-                            designer who is very capable of taking up <br> 
-                            complex projects and delivers impeccable <br> 
-                            design.’’
-                        </h3>
-                        <h4>
-                            Richard Owens
-                        </h4>
-                        <p>
-                            CEO, Company 1
-                        </p>
+                        <div class="about_img">
+                            <img src="img/about_bg.jpg" alt="about me">
+                        </div>
+                        <div class="about_descr_text">
+                            <h3>
+                                ‘’Robin is one of the best designers I have <br> 
+                                worked with in my entire life. He is a <br> 
+                                designer who is very capable of taking up <br> 
+                                complex projects and delivers impeccable <br> 
+                                design.’’
+                            </h3>
+                            <h4>
+                                Richard Owens
+                            </h4>
+                            <p>
+                                CEO, Company 1
+                            </p>
+                        </div>
                     </div>
                     <div class="about_item">
-                        <img src="img/about_bg2.jpg" alt="about me">
-                        <h3>
-                            ‘’I think Robin has an incredible gift. It has <br> 
-                            been an absolute pleasure to work with a <br> 
-                            designer of this caliber.’’
-                        </h3>
-                        <h4>
-                            Emily Parker
-                        </h4>
-                        <p>
-                            CEO, Company 2
-                        </p>
+                        <div class="about_img">
+                            <img src="img/about_bg2.jpg" alt="about me">
+                        </div>
+                        <div class="about_descr_text">
+                            <h3>
+                                ‘’I think Robin has an incredible gift. It has <br> 
+                                been an absolute pleasure to work with a <br> 
+                                designer of this caliber.’’
+                            </h3>
+                            <h4>
+                                Emily Parker
+                            </h4>
+                            <p>
+                                CEO, Company 2
+                            </p>
+                        </div>
                     </div>
                     <div class="about_item">
-                        <img src="img/about_bg3.jpg" alt="about me">
-                        <h3>
-                            ‘’All I can say that, Robin is a phenomenal <br> 
-                            designer. The wavelength at which he <br> 
-                            thinks is astoundaing. I love the focus, <br> 
-                            passion and attention to detial in the <br> 
-                            design.’’
-                        </h3>
-                        <h4>
-                            Vincent  Rudd
-                        </h4>
-                        <p>
-                            CEO, Company 1
-                        </p>
+                        <div class="about_img">
+                            <img src="img/about_bg3.jpg" alt="about me">
+                        </div>
+                        <div class="about_descr_text">
+                            <h3>
+                                ‘’All I can say that, Robin is a phenomenal <br> 
+                                designer. The wavelength at which he <br> 
+                                thinks is astoundaing. I love the focus, <br> 
+                                passion and attention to detial in the <br> 
+                                design.’’
+                            </h3>
+                            <h4>
+                                Vincent  Rudd
+                            </h4>
+                            <p>
+                                CEO, Company 1
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -442,32 +464,22 @@
     <section class="photo">
         <div class="container">
             <div class="photo_content">
-                <div class="photo_title">
+                <div class="photo_text">
                     <h2>
                         Photography
                     </h2>
-                </div>
-                <div class="photo_subtitle">
                     <p>
                         Here is a collection of my best travel pictures that I took while <br> 
                         travelling places all around the world. 
                     </p>
                 </div>
-                <div class="tabs">
-                    <ul>
-                        <li>
-                            <a href="#italy">Italy</a>
-                        </li>
-                        <li>
-                            <a href="#australia">Australia</a>
-                        </li>
-                        <li>
-                            <a href="#india">India</a>
-                        </li>
-                        <li>
-                            <a href="#brazil">Brazil</a>
-                        </li>
-                    </ul>
+                <div class="photo_tabs">
+                    <a href="#italy">Italy</a>
+                    <a href="#australia">Australia</a>
+                    <a href="#india">India</a>
+                    <a href="#brazil">Brazil</a>
+                </div>
+                <div class="photo_item">
                     <section id="italy">
                         <p>
                             Itaty
@@ -478,7 +490,7 @@
                         <p>
                             Australia
                         </p>
-                        <img src="img/photo_item2.jpg.jpg" alt="Australia">
+                        <img src="img/photo_item2.jpg" alt="Australia">
                     </section>
                     <section id="india">
                         <p>
