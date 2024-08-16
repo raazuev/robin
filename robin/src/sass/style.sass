@@ -17,10 +17,15 @@ ul
 .header
     min-height: 88px
     background: linear-gradient(to right, $base_black 40%, $level_1 30%)
+    position: fixed
+    top: 0
+    width: 100% 
+    z-index: 2
+    transition: all .4s ease
     .header_content
         display: grid
         grid-template-columns: 50% 10% 40%
-        grid-template-rows: 88px 50px
+        grid-template-rows: 88px
         align-items: center
         .menu_logo
             grid-column: 1 / 3
@@ -28,11 +33,7 @@ ul
             display: flex
             align-items: center
             a
-                z-index: 2
-                position: fixed
                 transform: scale(1)
-            body.scrolled > a
-                transform: scale(0.8)
         .menu_nav
             grid-column: 3 / 3
             grid-row: 1
@@ -42,13 +43,17 @@ ul
             a
                 @include pargraph_small_web
                 color: $text
+                padding: 9px 9px
                 transition: all .5s ease
                 text-decoration: none
                 &:hover
-                    padding: 9px 9px
                     background-color: $primary                  
-                    transform: scale(1.02)
+                    transform: translateX(-10px)
                     border-radius: 10px
+                &:hover:first-child
+                    transform: translateX(10px)
+                &:hover:nth-child(2)
+                    transform: translateX(10px)
                 &:active
                     background-color: $pink_accent
 .main
@@ -109,9 +114,10 @@ ul
                 @include overline
                 color: $label
                 transition: all .5s ease
+                padding: 10px
                 &:hover
+                    transform: translateY(-20px)
                     background-color: $blue_accent
-                    padding: 10px
                     border-radius: 10px
                     color: $peach_accent               
         .company_title
@@ -135,8 +141,8 @@ ul
                     color: $green_accent
                     transition: all .5s ease
                     &:hover
-                        background-color: $peach_accent
                         padding: 10px
+                        background-color: $peach_accent
                         border-radius: 10px
                 .blue
                     color: $blue_accent
@@ -284,7 +290,7 @@ ul
                 border: 8px solid
                 border-color: $blue_accent
             &:active 
-                transform: scaleX(1.2)
+                transform: scaleY(1.2)
 .work
     padding-top: 100px
     min-height: 2201px
@@ -304,11 +310,12 @@ ul
             p 
                 @include overline
                 color: $light_grey
+                padding: 10px
                 text-transform: uppercase
                 transition: all .5s ease
                 &:hover
+                    transform: translateY(-20px)
                     background-color: $blue_accent
-                    padding: 10px
                     border-radius: 10px
                     color: $peach_accent 
         .work_title 
@@ -342,6 +349,9 @@ ul
                         width: auto
                         height: 100%
                         object-fit: cover
+                        transition: all .5s ease
+                        &:hover
+                            transform: scale(1.05)
                 h3
                     @include h3_web
                     color: $text
@@ -355,7 +365,7 @@ ul
         .work_items_right
             grid-column: 2 
             grid-row: 1 / 4 span
-            max-height: 830px
+            max-height: 790px
             display: flex
             flex-direction: column
             gap: 20px
@@ -366,10 +376,17 @@ ul
                 flex-wrap: wrap
                 flex-direction: row
                 background-color: $level_1
-                img
+                .work_img
                     width: 100%
-                    max-height: 620px
-                    object-fit: cover
+                    height: auto
+                    object-fit: contain
+                    img
+                        width: auto
+                        height: 100%
+                        object-fit: cover
+                        transition: all .5s ease
+                        &:hover
+                            transform: scale(1.05)
                 h3
                     @include h3_web
                     color: $text
@@ -389,5 +406,234 @@ ul
                 @include button
                 color: $text
                 transition: all .5s ease
-
-                
+.instagram
+    min-height: 600px
+    background-color: $peach_accent
+    .instagram_content
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-template-rows: 200px 230px 170px
+        .insta_title
+            grid-column: 1
+            grid-row: 1 
+            display: flex
+            align-items: flex-end
+            h2 
+                @include h2_web 
+                color: $base_black
+        .insta_subtitle
+            grid-column: 1 
+            grid-row: 2 / 3
+            display: flex
+            align-items: center
+            position: relative
+            p 
+                @include pargraph_web
+                color: $dark_grey
+        .insta_btn
+            grid-column: 1 
+            grid-row: 3 / 3
+            display: flex
+            align-items: center
+            a
+                @include pargraph_small_web
+                color: $base_black
+                text-underline-offset: 10px
+                transition: transform .5s ease
+                &:hover
+                    color: $blue_accent
+                    transform: scale(1.08)
+                &:active
+                    color: $pink_accent
+        .insta_img
+            grid-column: 2
+            grid-row: 1 span
+            display: flex
+            img
+                min-height: 600px
+                object-fit: cover
+.dribbble
+    min-height: 1248px
+    background-color: $base_black
+    .dribbble_content 
+        display: grid
+        grid-template-columns: 100%
+        grid-template-rows: 450px 1110px
+        .drib_main_text
+            display: flex
+            justify-content: space-evenly
+            flex-direction: column
+            .drib_title
+                grid-column: 1 
+                grid-row: 1
+                h2 
+                    @include h2_web 
+                    color: $text
+            .drib_subtitle
+                grid-column: 1 
+                grid-row: 1 
+                p 
+                    @include pargraph_web 
+                    color: $dark_grey 
+            .drib_btn 
+                grid-column: 1 
+                grid-row: 1
+                display: flex
+                a
+                    @include pargraph_small_web
+                    color: $text
+                    text-underline-offset: 10px
+                    transition: all .5s ease
+                    &:hover
+                        color: $blue_accent
+                        transform: scale(1.08)
+                    &:active
+                        color: $pink_accent
+        .drib_img 
+            grid-column: 1 
+            grid-row: 2 
+            width: 100%
+            max-height: 640px
+            object-fit: contain
+            img
+                width: 100%
+                // min-height: 640px
+                object-fit: cover
+.about
+    min-height: 2800px
+    background-color: $base_black
+    .about_content
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-template-rows: 1fr
+        .about_main_text
+            grid-column: 1 
+            grid-row: 1
+            display: flex
+            justify-content: flex-start
+            flex-direction: column
+            gap: 50px
+            .about_title
+                @include h2_web 
+                color: $text
+            .about_subtitle
+                @include pargraph_web 
+                color: $dark_grey 
+            .about_btn
+                display: flex
+                a 
+                    @include pargraph_small_web
+                    color: $text
+                    text-underline-offset: 10px
+                    transition: all .5s ease
+                    &:hover
+                        color: $blue_accent
+                        transform: scale(1.08)
+                    &:active
+                        color: $pink_accent
+        .about_inner
+            grid-column: 2 / 2
+            grid-row: 1
+            min-height: 830px
+            display: flex
+            flex-direction: column
+            gap: 50px
+            .about_item
+                min-height: 830px
+                display: flex
+                justify-content: space-between
+                flex-wrap: wrap
+                flex-direction: column
+                background-color: $base_black
+                border: 1px solid $light_grey
+                gap: -5px
+                .about_img
+                    width: 100%
+                    min-height: 500px
+                    object-fit: contain
+                    img
+                        width: auto
+                        height: 100%
+                        object-fit: cover
+                        transition: all .5s ease
+                        &:hover
+                            transform: scale(1.05)
+                            border: 3px solid $blue_accent
+            .about_descr_text
+                display: flex
+                justify-content: center
+                flex-direction: column
+                flex-wrap: wrap 
+                align-content: center
+                align-items: flex-start
+                margin: 10% auto
+                gap: 22px
+                h3
+                    @include h3_web 
+                    color: $text
+                h4 
+                    @include h4_web 
+                    color: $dark_grey
+                    border-radius: 20px
+                    transition: all .5s ease
+                    &:hover
+                        background-color: $pink_accent
+                        color: $text
+                        padding: 7px
+                p 
+                    @include pargraph_web 
+                    color: $dark_grey
+.photo
+    min-height: 959px
+    background-color: $base_black
+    .photo_content
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-auto-rows: 200px 50px 500px
+        .photo_text
+            grid-column: 1 / 2 
+            grid-row: 1 / 3 
+            display: flex
+            flex-direction: column
+            h2 
+                @include h2_web 
+                color: $text
+            p 
+                @include pargraph_web 
+                color: $light_grey
+        .photo_tabs
+            grid-column: 1 
+            grid-row: 2 
+            display: flex
+            flex-direction: row
+            flex-wrap: wrap
+            justify-content: flex-start
+            gap: 40px
+            a
+                @include pargraph_web
+                color: $text
+                padding: 12px 38px
+                border-radius: 10px
+                border: 1px solid $blue_accent
+                transition: all .5s ease
+                text-decoration: none
+                &:hover
+                    background-color: $primary                  
+                    transform: translateX(-10px)
+                    border-radius: 10px
+                &:hover:first-child
+                    transform: translateX(10px)
+                &:hover:nth-child(2)
+                    transform: translateX(10px)
+        .photo_item
+            grid-column: 1 / 2 span
+            grid-row: 3 / 3 span
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            img 
+                width: 100%
+                max-height: 420px
+.form
+    min-height: 731px
+    background-color: $base_black             
