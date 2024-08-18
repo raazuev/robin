@@ -41,38 +41,24 @@ ul
             justify-content: space-between
             overflow: hidden
             a
-                @include pargraph_small_web
-                color: $text
-                padding: 9px 9px
-                transition: all .5s ease
-                text-decoration: none
-                &:hover
-                    background-color: $primary                  
-                    transform: translateX(-10px)
-                    border-radius: 10px
-                &:hover:first-child
-                    transform: translateX(10px)
-                &:hover:nth-child(2)
-                    transform: translateX(10px)
-                &:active
-                    background-color: $pink_accent
+                @include link_menu
 .main
     min-height: 814px
     background: linear-gradient(to right, $base_black 40%, $level_1 30%)
     .main_content
         display: grid
         grid-template-columns: 50% 50%
-        grid-template-rows: 200px 330px 1fr
+        grid-template-rows: 150px 500px 300px
         .main_img
             grid-column: 1
-            grid-row: 3 span
+            grid-row: 2 / 2 span
             display: flex
-            position: absolute
             img
                 min-height: 700px
-                transform: translateX(-200px)
+                transform: translateX(60px)
                 object-fit: cover
                 z-index: 0
+                @include box-shadow
         .main_title
             grid-column: 2 span
             grid-row: 2 / 3
@@ -82,7 +68,7 @@ ul
             h1
                 z-index: 1
                 @include h1_web
-                color: $text
+                color: $primary
                 .gray_h1
                     color: $dark_grey
                     transition: all .6s ease
@@ -111,15 +97,7 @@ ul
             display: flex
             align-items: flex-end
             p
-                @include overline
-                color: $label
-                transition: all .5s ease
-                padding: 10px
-                &:hover
-                    transform: translateY(-20px)
-                    background-color: $blue_accent
-                    border-radius: 10px
-                    color: $peach_accent               
+               @include subtitle_hover 
         .company_title
             grid-column: 1 / 2 span
             grid-row: 2 
@@ -143,7 +121,7 @@ ul
                     &:hover
                         padding: 10px
                         background-color: $peach_accent
-                        border-radius: 10px
+                        border-radius: 20px
                 .blue
                     color: $blue_accent
                     transition: all .5s ease
@@ -191,15 +169,7 @@ ul
             display: flex
             align-items: center
             a
-                @include pargraph_small_web
-                color: $base_black
-                text-underline-offset: 10px
-                transition: transform .5s ease
-                &:hover
-                    color: $blue_accent
-                    transform: scale(1.08)
-                &:active
-                    color: $pink_accent
+                @include a_link
         .values_img
             grid-column: 2
             grid-row: 1 span
@@ -207,6 +177,7 @@ ul
             img
                 min-height: 600px
                 object-fit: cover
+                @include box-shadow
 .skillset
     min-height: 664px
     background-color: $base_black
@@ -252,15 +223,7 @@ ul
                 justify-items: end
                 gap: 17px
                 h3  
-                    @include h3_web
-                    color: $text
-                    cursor: default
-                    overflow: hidden
-                    padding: 7px
-                    border-radius: 20px
-                    transition: all .5s ease
-                    &:hover
-                        background-color: $pink_accent
+                    @include skillset_hover
                 p 
                     @include pargraph_small_web 
                     color: $light_grey
@@ -272,11 +235,12 @@ ul
     position: relative
     .slider_items
         display: flex
+        flex-direction: column
+        flex-wrap: wrap
         justify-content: space-between
         align-items: center
         position: absolute
-        transform: translateX(-34%)
-        gap: 23px
+        transform: translateX(-7%)
         .item
             display: flex
             justify-content: center
@@ -286,19 +250,17 @@ ul
             border: 1px solid $dark_grey
             transition: all .5s ease
             &:hover
-                transform: scale(1.1)
-                border: 8px solid
+                transform: scale(1.02)
+                border: 5px solid
                 border-color: $blue_accent
-            &:active 
-                transform: scaleY(1.2)
 .work
     padding-top: 100px
-    min-height: 2201px
+    min-height: 1900px
     background-color: $base_black
     .work_content
         display: grid
         grid-template-columns: 50% 50%
-        grid-auto-rows: 20px 210px 500px 500px 645px
+        grid-auto-rows: 20px 210px 500px 700px 80px
         gap: 20px
         grid-row-gap: 17px
         .work_subtitle
@@ -308,16 +270,7 @@ ul
             justify-content: flex-start
             align-items: flex-end
             p 
-                @include overline
-                color: $light_grey
-                padding: 10px
-                text-transform: uppercase
-                transition: all .5s ease
-                &:hover
-                    transform: translateY(-20px)
-                    background-color: $blue_accent
-                    border-radius: 10px
-                    color: $peach_accent 
+                @include subtitle_hover
         .work_title 
             grid-column: 1 
             grid-row: 2
@@ -330,12 +283,12 @@ ul
         .work_items_left
             grid-column: 1 
             grid-row: 3 / 4 span
-            min-height: 830px
+            min-height: 800px
             display: flex
             flex-direction: column
             gap: 20px
             .work_item
-                min-height: 830px
+                min-height: 650px
                 display: flex
                 justify-content: center
                 flex-wrap: wrap
@@ -343,34 +296,36 @@ ul
                 background-color: $level_1
                 .work_img
                     width: 100%
-                    height: auto
+                    height: 400px
                     object-fit: contain
                     img
-                        width: auto
+                        width: 100%
                         height: 100%
                         object-fit: cover
-                        transition: all .5s ease
-                        &:hover
-                            transform: scale(1.05)
-                h3
-                    @include h3_web
-                    color: $text
+                        @include box_shadow
+                .work_descr_text
                     display: flex
+                    justify-content: flex-start
                     flex-direction: column
-                    justify-content: center
-                p
-                    @include pargraph_web
-                    color: $dark_grey
-
+                    flex-wrap: wrap 
+                    align-content: center
+                    align-items: flex-start
+                    gap: 22px
+                    h3
+                        @include h3_web
+                        color: $text
+                    p
+                        @include pargraph_web
+                        color: $dark_grey
         .work_items_right
             grid-column: 2 
-            grid-row: 1 / 4 span
-            max-height: 790px
+            grid-row: 1 / 2 span
+            max-height: 800px
             display: flex
             flex-direction: column
             gap: 20px
             .work_item
-                min-height: 830px
+                min-height: 650px
                 display: flex
                 justify-content: center
                 flex-wrap: wrap
@@ -378,24 +333,27 @@ ul
                 background-color: $level_1
                 .work_img
                     width: 100%
-                    height: auto
+                    height: 400px
                     object-fit: contain
                     img
-                        width: auto
+                        width: 100%
                         height: 100%
                         object-fit: cover
-                        transition: all .5s ease
-                        &:hover
-                            transform: scale(1.05)
-                h3
-                    @include h3_web
-                    color: $text
+                        @include box_shadow
+                .work_descr_text
                     display: flex
+                    justify-content: flex-start
                     flex-direction: column
-                    justify-content: center
-                p
-                    @include pargraph_web
-                    color: $dark_grey
+                    flex-wrap: wrap 
+                    align-content: center
+                    align-items: flex-start
+                    gap: 22px
+                    h3
+                        @include h3_web
+                        color: $text
+                    p
+                        @include pargraph_web
+                        color: $dark_grey
         .work_btn
             grid-column: 2
             grid-row: 5
@@ -436,15 +394,7 @@ ul
             display: flex
             align-items: center
             a
-                @include pargraph_small_web
-                color: $base_black
-                text-underline-offset: 10px
-                transition: transform .5s ease
-                &:hover
-                    color: $blue_accent
-                    transform: scale(1.08)
-                &:active
-                    color: $pink_accent
+                @include a_link
         .insta_img
             grid-column: 2
             grid-row: 1 span
@@ -452,6 +402,7 @@ ul
             img
                 min-height: 600px
                 object-fit: cover
+                @include box-shadow
 .dribbble
     min-height: 1248px
     background-color: $base_black
@@ -480,15 +431,8 @@ ul
                 grid-row: 1
                 display: flex
                 a
-                    @include pargraph_small_web
+                    @include a_link 
                     color: $text
-                    text-underline-offset: 10px
-                    transition: all .5s ease
-                    &:hover
-                        color: $blue_accent
-                        transform: scale(1.08)
-                    &:active
-                        color: $pink_accent
         .drib_img 
             grid-column: 1 
             grid-row: 2 
@@ -499,6 +443,7 @@ ul
                 width: 100%
                 // min-height: 640px
                 object-fit: cover
+                @include box-shadow
 .about
     min-height: 2800px
     background-color: $base_black
@@ -522,15 +467,8 @@ ul
             .about_btn
                 display: flex
                 a 
-                    @include pargraph_small_web
+                    @include a_link 
                     color: $text
-                    text-underline-offset: 10px
-                    transition: all .5s ease
-                    &:hover
-                        color: $blue_accent
-                        transform: scale(1.08)
-                    &:active
-                        color: $pink_accent
         .about_inner
             grid-column: 2 / 2
             grid-row: 1
@@ -555,10 +493,7 @@ ul
                         width: auto
                         height: 100%
                         object-fit: cover
-                        transition: all .5s ease
-                        &:hover
-                            transform: scale(1.05)
-                            border: 3px solid $blue_accent
+                        @include box_shadow
             .about_descr_text
                 display: flex
                 justify-content: center
@@ -572,14 +507,7 @@ ul
                     @include h3_web 
                     color: $text
                 h4 
-                    @include h4_web 
-                    color: $dark_grey
-                    border-radius: 20px
-                    transition: all .5s ease
-                    &:hover
-                        background-color: $pink_accent
-                        color: $text
-                        padding: 7px
+                    @include about_hover
                 p 
                     @include pargraph_web 
                     color: $dark_grey
@@ -589,12 +517,13 @@ ul
     .photo_content
         display: grid
         grid-template-columns: 50% 50%
-        grid-auto-rows: 200px 50px 500px
+        grid-auto-rows: 200px 100px 500px 1fr
         .photo_text
             grid-column: 1 / 2 
             grid-row: 1 / 3 
             display: flex
             flex-direction: column
+            gap: 20px
             h2 
                 @include h2_web 
                 color: $text
@@ -608,32 +537,163 @@ ul
             flex-direction: row
             flex-wrap: wrap
             justify-content: flex-start
+            align-content: center
             gap: 40px
-            a
-                @include pargraph_web
-                color: $text
-                padding: 12px 38px
-                border-radius: 10px
-                border: 1px solid $blue_accent
-                transition: all .5s ease
-                text-decoration: none
-                &:hover
-                    background-color: $primary                  
-                    transform: translateX(-10px)
-                    border-radius: 10px
-                &:hover:first-child
-                    transform: translateX(10px)
-                &:hover:nth-child(2)
-                    transform: translateX(10px)
+            button
+                @include button_form_tabs     
         .photo_item
             grid-column: 1 / 2 span
-            grid-row: 3 / 3 span
-            display: flex
-            flex-direction: row
-            justify-content: space-between
-            img 
-                width: 100%
-                max-height: 420px
+            grid-row: 3 span
+            min-height: 800px
+            .tabs_item:not(._active)
+                display: none
+            .tabs_item
+                display: flex
+                justify-content: space-between
+                flex-direction: row
+                flex-wrap: wrap
+                min-height: 400px
+                min-width: 300px
+                width: auto
+                height: 60%
+                object-fit: contain
+                img 
+                    max-width: 300px
+                    height: 100%
+                    object-fit: cover
 .form
-    min-height: 731px
-    background-color: $base_black             
+    min-height: 600px
+    background-color: $base_black  
+    .form_content
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-template-rows: 200px 300px
+        .form_text
+            grid-column: 1 / 2
+            grid-row: 1 / 2
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            gap: 30px
+            h2 
+                @include h2_web 
+                color: $text 
+            p
+                @include pargraph_web 
+                color: $dark_grey
+        .form_request
+            grid-column: 2 / 2
+            grid-row: 1 / 2 span
+            .inner_form
+                display: flex
+                flex-direction: column
+                flex-wrap: wrap
+                align-content: flex-start
+                gap: 40px
+                // label
+                //     display: flex
+                //     @include pargraph_small_web
+                //     color: $text
+                //     transform: translateY(-10px)              
+                .input_name
+                    min-width: 500px
+                    min-height: 50px
+                    color: $text
+                    border: none
+                    background-color: $level_1
+                    &:focus
+                        outline: 1px solid $blue_accent
+                    &::placeholder
+                        position: absolute
+                        z-index: 2
+                        transition: all .5s ease
+                        @include pargraph_web
+                        color: $text
+                    &:focus::placeholder
+                        transform: translateY(40px)
+                        color: $blue_accent 
+                .input_email
+                    min-width: 500px
+                    min-height: 50px
+                    color: $text
+                    background-color: $level_1
+                    border: none
+                    &:focus
+                        outline: 1px solid $blue_accent
+                    &::placeholder
+                        position: absolute
+                        z-index: 2
+                        transition: all .5s ease
+                        @include pargraph_web
+                        color: $text
+                    &:focus::placeholder
+                        transform: translateY(40px)
+                        color: $blue_accent 
+                .input_message
+                    min-width: 500px
+                    min-height: 100px
+                    color: $text
+                    background-color: $level_1
+                    border: none
+                    &:focus 
+                       outline: 1px solid $blue_accent
+                    &::placeholder
+                        position: absolute
+                        z-index: 2
+                        transition: all .5s ease
+                        @include pargraph_web
+                        color: $text
+                    &:focus::placeholder
+                        transform: translateY(60px)
+                        color: $blue_accent 
+                .label_btn
+                    @include form_btn
+.footer
+    min-height: 400px
+    background-color: $level_1
+    .footer_content
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-template-rows: 300px 50px
+        .footer_logo
+            grid-column: 1 
+            grid-row: 1
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            transform: translateY(-70px)
+        .footer_icons
+            grid-column: 1 
+            grid-row: 1
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            gap: 20px
+            img 
+                max-width: 40px
+        .footer_copiright 
+            grid-column: 1 
+            grid-row: 2
+            p 
+                @include pargraph_small_web 
+                color: $light_grey
+        .footer_nav 
+            grid-column: 2 
+            grid-row: 1
+            display: flex
+            align-content: center
+            flex-wrap: wrap
+            justify-content: space-around
+            align-items: flex-start
+            .nav_left
+                display: flex
+                flex-direction: column
+                gap: 20px
+                a 
+                    @include link_footer 
+            .nav_right 
+                display: flex
+                flex-direction: column
+                gap: 20px
+                a 
+                    @include link_footer 
