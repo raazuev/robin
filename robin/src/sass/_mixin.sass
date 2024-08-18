@@ -44,6 +44,22 @@
     font-weight: 700
     line-height: 24px
     text-transform: uppercase
+@mixin link_menu 
+    @include pargraph_small_web
+    color: $text
+    padding: 9px 9px
+    transition: all .5s ease
+    text-decoration: none
+    &:hover
+        background-color: $primary                  
+        transform: translateX(-10px)
+        border-radius: 10px
+    &:hover:first-child
+        transform: translateX(10px)
+    &:hover:nth-child(2)
+        transform: translateX(10px)
+    &:active
+        background-color: $pink_accent
 @mixin button
     font-family: Sen
     font-size: 18px
@@ -59,8 +75,95 @@
         background-color: $green_accent
     &:active
         transform: scale(0.9)
-
-
-
-
-
+@mixin form_btn 
+    font-family: Sen
+    font-size: 18px
+    font-weight: 700
+    line-height: 27px
+    text-transform: uppercase
+    text-decoration: none
+    padding: 24px 32px
+    background-color: $blue_accent
+    color: $text
+    transition: all .5s ease
+    &:hover
+        border: none
+        background-color: $green_accent
+    &:active
+        transform: scale(0.9)
+@mixin link_footer 
+    font-family: Sen
+    font-size: 16px
+    font-weight: 400
+    line-height: 24px
+    text-decoration: none
+    padding: 10px
+    color: $text 
+    transition: all .5s ease
+    &:hover 
+        transform: translateX(10px)
+        background-color: $blue_accent
+        border-radius: 10px
+        color: $peach_accent
+@mixin box-shadow 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+    transition: all .6s ease
+    &:hover 
+        transform: scale(1.02)
+        box-shadow: 0 2px 40px $base_black, 0 2px 50px $base_black
+@mixin subtitle_hover 
+    @include overline
+    color: $label
+    transition: all .5s ease
+    padding: 10px
+    &:hover
+        transform: translateY(-20px)
+        background-color: $blue_accent
+        border-radius: 10px
+        color: $peach_accent  
+@mixin a_link 
+    @include pargraph_small_web
+    color: $base_black
+    text-underline-offset: 10px
+    transition: transform .5s ease
+    &:hover
+        color: $blue_accent
+        transform: scale(1.08)
+    &:active
+        color: $pink_accent
+@mixin skillset_hover
+    @include h3_web
+    color: $text
+    cursor: default
+    overflow: hidden
+    padding: 7px
+    border-radius: 20px
+    transition: all .5s ease
+    &:hover
+        background-color: $pink_accent
+@mixin about_hover 
+    @include h4_web 
+    color: $dark_grey
+    border-radius: 20px
+    transition: all .5s ease
+    &:hover
+        background-color: $pink_accent
+        color: $text
+        padding: 7px
+@mixin button_form_tabs 
+    @include pargraph_web
+    color: $text
+    padding: 12px 38px
+    border-radius: 10px
+    background: none
+    border: 1px solid $blue_accent
+    transition: all .5s ease
+    text-decoration: none
+    &:hover
+        background-color: $primary                  
+        transform: translateX(-10px)
+        border-radius: 10px
+    &:hover:first-child
+        transform: translateX(10px)
+    &:hover:nth-child(2)
+        transform: translateX(10px)  
