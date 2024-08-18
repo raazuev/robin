@@ -10,6 +10,8 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="icons/skill_icon.svg">
 
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
     <link rel="stylesheet" href="css/style.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,13 +41,13 @@
         <div class="container">
             <div class="main_content">
                 <div class="main_img">
-                    <img src="img/main_bg.jpg" alt="main">
+                    <img src="img/michael.jpg" alt="main">
                 </div>
                 <div class="main_title">
                     <h1>
-                        I’m Robin Williams. <br>
-                        A Product Designer <br>
-                        <span class="gray_h1">based in Italy.</span>
+                        I’m Michael Scott. <br>
+                        A Big Boss <br>
+                        <span class="gray_h1">based in Scranton.</span>
                     </h1>
                 </div>
                 <div class="main_subtitle">
@@ -78,7 +80,8 @@
                             01
                         </p>
                         <h3>
-                            <span class="green">Google</span>, Interaction Designer
+                            <span class="green">Google</span> <br>
+                            Interaction Designer
                         </h3>
                         <p>
                             I currently am the lead designer on the <br>
@@ -90,7 +93,8 @@
                                 02
                         </p>
                         <h3>
-                            <span class="blue">Facebook</span>, Product Designer
+                            <span class="blue">Facebook</span> <br>
+                            Product Designer
                         </h3>
                         <p>
                             I’ve worked on a wide variety of internal tools <br>
@@ -102,7 +106,8 @@
                             03
                         </p>
                         <h3>
-                            <span class="pink">Dribbble</span>, Graphic Designer
+                            <span class="pink">Dribbble</span> <br>
+                            Graphic Designer
                         </h3>
                         <p>
                             I started my design career with Dribbble. I was <br>
@@ -211,7 +216,7 @@
 
     <section class="slider">
         <div class="container">
-            <div class="slider_items">
+            <div class="owl-carousel owl-theme slider_items" id="slider">
                 <div class="item">
                     <a href="#">
                         <img src="img/slide/slide.svg" alt="slide">
@@ -280,14 +285,16 @@
                         <div class="work_img">
                             <img src="img/work/work_item2.jpg" alt="work">
                         </div>
-                        <h3>
-                            Restaurant Website Design
-                        </h3>
-                        <p>
-                            I worked with the guys at CBRE to redesign their entire website <br> 
-                            and mobile app fro both Android and iOS. This project lasted for 4 <br> 
-                            months and was a very challenging one.
-                        </p>
+                        <div class="work_descr_text">
+                            <h3>
+                                Restaurant Website Design
+                            </h3>
+                            <p>
+                                I worked with the guys at CBRE to redesign their entire website <br> 
+                                and mobile app fro both Android and iOS. This project lasted for 4 <br> 
+                                months and was a very challenging one.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="work_items_right">
@@ -295,27 +302,31 @@
                         <div class="work_img">
                             <img src="img/work//work_item3.jpg" alt="work">
                         </div>
-                        <h3>
-                            Restaurant Website Design
-                        </h3>
-                        <p>
-                            I worked with the guys at CBRE to redesign their entire website <br> 
-                            and mobile app fro both Android and iOS. This project lasted for 4 <br> 
-                            months and was a very challenging one.
-                        </p>
+                        <div class="work_descr_text">
+                            <h3>
+                                Restaurant Website Design
+                            </h3>
+                            <p>
+                                I worked with the guys at CBRE to redesign their entire website <br> 
+                                and mobile app fro both Android and iOS. This project lasted for 4 <br> 
+                                months and was a very challenging one.
+                            </p>
+                        </div>
                     </div>
                     <div class="work_item">
                         <div class="work_img">
                             <img src="img/work/work_item4.jpg" alt="work">
                         </div>
-                        <h3>
-                            Restaurant Website Design
-                        </h3>
-                        <p>
-                            I worked with the guys at CBRE to redesign their entire website <br> 
-                            and mobile app fro both Android and iOS. This project lasted for 4 <br> 
-                            months and was a very challenging one.
-                        </p>
+                        <div class="work_descr_text">
+                            <h3>
+                                Restaurant Website Design
+                            </h3>
+                            <p>
+                                I worked with the guys at CBRE to redesign their entire website <br> 
+                                and mobile app fro both Android and iOS. This project lasted for 4 <br> 
+                                months and was a very challenging one.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="work_btn">
@@ -474,36 +485,27 @@
                     </p>
                 </div>
                 <div class="photo_tabs">
-                    <a href="#italy">Italy</a>
-                    <a href="#australia">Australia</a>
-                    <a href="#india">India</a>
-                    <a href="#brazil">Brazil</a>
+                    <button class="tabs_btn" data-tab="italy">Italy</button>
+                    <button class="tabs_btn" data-tab="australia">Australia</button>
+                    <button class="tabs_btn" data-tab="india">India</button>
+                    <button class="tabs_btn" data-tab="brazil">Brazil</button>
                 </div>
                 <div class="photo_item">
-                    <section id="italy">
-                        <p>
-                            Itaty
-                        </p>
+                    <div class="tabs_item _active" id="italy">
                         <img src="img/photo_item.jpg" alt="italy">
-                    </section>
-                    <section id="australia">
-                        <p>
-                            Australia
-                        </p>
+                        <img src="img/photo_item2.jpg" alt="italy">
+                        <img src="img/photo_item3.jpg" alt="italy">
+                        <img src="img/photo_item4.jpg" alt="italy">
+                    </div>
+                    <div class="tabs_item" id="australia">
                         <img src="img/photo_item2.jpg" alt="Australia">
-                    </section>
-                    <section id="india">
-                        <p>
-                            India
-                        </p>
+                    </div>
+                    <div class="tabs_item" id="india">
                         <img src="img/photo_item3.jpg" alt="India">
-                    </section>
-                    <section id="brazil">
-                        <p>
-                            Brazil
-                        </p>
+                    </div>
+                    <div class="tabs_item" id="brazil">
                         <img src="img/photo_item4.jpg" alt="Brazil">
-                    </section>
+                    </div>
                 </div>
             </div>
         </div>
@@ -512,30 +514,27 @@
     <section class="form">
         <div class="container">
             <div class="form_content">
-                <div class="form_title">
+                <div class="form_text">
                     <h2>
                         Let’s get started
                     </h2>
-                </div>
-                <div class="form_subtitle">
                     <p>
                         Now that you know a lot about me, let me know if you are <br> 
                         interested to work with me.
                     </p>
                 </div>
                 <div class="form_request">
-                    <form action="" method="post" class="inner_form">
+                    <form id="form_action" action="" method="POST" class="inner_form">
                         <p>
-                            <label for="name"></label>
+                            <!-- <label for="name">Name</label> -->
                             <input class="input_name" type="text" name="name" id="name" placeholder="Name" required>
+                        <p>
+                            <!-- <label for="email">Email</label> -->
+                            <input class="input_email" type="email" name="email" id="email" placeholder="Email" required size="10">
                         </p>
                         <p>
-                            <label for="email"></label>
-                            <input class="input_email" type="email" name="email" id="email" placeholder="Email" required>
-                        </p>
-                        <p>
-                            <label for="text"></label>
-                            <input class="input_message" type="text" name="text" id="text" placeholder="Message" required>
+                            <!-- <label for="text">Message</label> -->
+                            <input class="input_message" type="text" name="text" id="text" placeholder="Message" required size="30">
                         </p>
                         <button type="submit" class="label_btn">
                             Let’s get started
@@ -558,7 +557,7 @@
                     <a href="#">
                         <img src="icons/Twitter_Logo 1.svg" alt="Twitter">
                     </a>
-                    <a href="#">
+                    <a href="https://learn.javascript.ru/">
                         <img src="icons/Dribbble_Logo.svg" alt="Dribbble">
                     </a>
                     <a href="#">
@@ -569,36 +568,24 @@
                     <p>Not Copyright 2020 • Robin Williams. Webflow cloneable</p>
                 </div>
                 <div class="footer_nav">
-                    <ul class="nav_left">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li>
-                            <a href="#">About</a>
-                        </li>
-                        <li>
-                            <a href="#">Work</a>
-                        </li>
-                        <li>
-                            <a href="#">Process</a>
-                        </li>
-                    </ul>
-                    <ul class="nav_right">
-                        <li>
-                            <a href="#">Store</a>
-                        </li>
-                        <li>
-                            <a href="#">Blog</a>
-                        </li>
-                        <li>
-                            <a href="#">Reading List</a>
-                        </li>
-                    </ul>
+                    <div class="nav_left">
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Work</a>
+                        <a href="#">Process</a>
+                    </div>
+                    <div class="nav_right">
+                        <a href="#">Store</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Reading List</a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script> 
 </body>
 </html>
