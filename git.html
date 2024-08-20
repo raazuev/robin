@@ -1,0 +1,49 @@
+PS C:\Users\raazu\Desktop\практика\robin> git status
+On branch main
+nothing to commit, working tree clean
+PS C:\Users\raazu\Desktop\практика\robin> git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\raazu\Desktop\практика\robin> git add -A
+PS C:\Users\raazu\Desktop\практика\robin> git commit -a -m"Second"
+[main 6558e20] Second
+ 1 file changed, 1 insertion(+)
+PS C:\Users\raazu\Desktop\практика\robin>
+
+//
+
+PS C:\Users\raazu\Desktop\практика\robin> git log
+commit 6558e201f782c3ae36531c8d27d3571bafd83d17 (HEAD -> main)
+Author: Razuev Anton <Raazuev@gmail.com>
+Date:   Tue Aug 20 21:18:46 2024 +0500
+
+    Second
+
+commit 773f77ba86648f7cd9ce7d4b0623ae4d431332a5
+Author: Razuev Anton <Raazuev@gmail.com>
+Date:   Tue Aug 20 21:05:43 2024 +0500
+
+    first commit
+PS C:\Users\raazu\Desktop\практика\robin> 
+
+//
+
+Successfully rebased and updated refs/heads/main.
+PS C:\Users\raazu\Desktop\практика\robin> git branch -M main
+PS C:\Users\raazu\Desktop\практика\robin> git push -u origin main
+Enumerating objects: 62, done.
+Counting objects: 100% (62/62), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (60/60), done.
+Writing objects: 100% (61/61), 11.64 MiB | 3.35 MiB/s, done.
+Total 61 (delta 4), reused 39 (delta 1), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (4/4), done.
+To https://github.com/raazuev/robin.git
+   d84192b..bbda6d1  main -> main
+branch 'main' set up to track 'origin/main'.
+PS C:\Users\raazu\Desktop\практика\robin> 
