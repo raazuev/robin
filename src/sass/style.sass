@@ -1,0 +1,703 @@
+@import _mixin
+@import _variables
+*
+    box-sizing: border-box
+    margin: 0
+html
+    font-family: "Sen", sans-serif
+    scroll-behavior: smooth
+img
+    max-width: 100%
+ul
+    list-style-type: none
+.container
+    max-width: 1296px
+    width: 100%
+    margin: 0 auto
+.header
+    min-height: 88px
+    background: linear-gradient(to right, $base_black 40%, $level_1 30%)
+    position: fixed
+    top: 0
+    width: 100% 
+    z-index: 2
+    transition: all .4s ease
+    .header_content
+        display: grid
+        grid-template-columns: 50% 10% 40%
+        grid-template-rows: 88px
+        align-items: center
+        .menu_logo
+            grid-column: 1 / 3
+            grid-row: 1
+            display: flex
+            align-items: center
+            a
+                transform: scale(1)
+        .menu_nav
+            grid-column: 3 / 3
+            grid-row: 1
+            display: flex
+            justify-content: space-between
+            overflow: hidden
+            a
+                @include link_menu
+.main
+    min-height: 814px
+    background: linear-gradient(to right, $base_black 40%, $level_1 30%)
+    .main_content
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-template-rows: 150px 500px 300px
+        .main_img
+            grid-column: 1
+            grid-row: 2 / 2 span
+            display: flex
+            img
+                min-height: 700px
+                transform: translateX(60px)
+                object-fit: cover
+                z-index: 0
+                @include box-shadow
+        .main_title
+            grid-column: 2 span
+            grid-row: 2 / 3
+            display: flex
+            justify-content: end
+            position: relative
+            h1
+                z-index: 1
+                @include h1_web
+                color: $primary
+                .gray_h1
+                    color: $dark_grey
+                    transition: all .6s ease
+                    &:hover
+                        color: $green_accent
+        .main_subtitle
+            grid-column: 2 span
+            grid-row: 3 / 3
+            position: relative
+            justify-content: end
+            display: flex
+            p
+                z-index: 1
+                @include pargraph_web
+                color: $text
+.company
+    min-height: 715px
+    background-color: $base_black
+    .company_content
+        display: grid
+        grid-template-columns: 33% 33% 34%
+        grid-template-rows: 150px 200px 1fr
+        .company_subtitle
+            grid-column: 1 / 3
+            grid-row: 1
+            display: flex
+            align-items: flex-end
+            p
+               @include subtitle_hover 
+        .company_title
+            grid-column: 1 / 2 span
+            grid-row: 2 
+            h2
+                @include h2_web
+                color: $text
+        .company_inner
+            grid-column: 1 / 3 span
+            grid-row: 3
+            display: flex
+            justify-content: space-between
+            p:first-child
+                @include label
+                color: $label
+            h3
+                @include h3_web
+                color: $text
+                .green
+                    color: $green_accent
+                    transition: all .5s ease
+                    &:hover
+                        padding: 10px
+                        background-color: $peach_accent
+                        border-radius: 20px
+                .blue
+                    color: $blue_accent
+                    transition: all .5s ease
+                    &:hover
+                        background-color: $pink_accent
+                        padding: 10px
+                        border-radius: 20px
+                .pink
+                    color: $pink_accent
+                    transition: all .5s ease
+                    &:hover
+                        background-color: $blue_accent
+                        padding: 10px
+                        border-radius: 20px
+            p 
+                @include pargraph_small_web 
+                color: $dark_grey          
+.values
+    min-height: 600px
+    background-color: $peach_accent
+    .values_content
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-template-rows: 200px 230px 170px
+        .values_title
+            grid-column: 1
+            grid-row: 1 
+            display: flex
+            align-items: flex-end
+            h2 
+                @include h2_web 
+                color: $base_black
+        .values_subtitle
+            grid-column: 1 
+            grid-row: 2 / 3
+            display: flex
+            align-items: center
+            position: relative
+            p 
+                @include pargraph_web
+                color: $dark_grey
+        .values_btn
+            grid-column: 1 
+            grid-row: 3 / 3
+            display: flex
+            align-items: center
+            a
+                @include a_link
+        .values_img
+            grid-column: 2
+            grid-row: 1 span
+            display: flex
+            img
+                min-height: 600px
+                object-fit: cover
+                @include box-shadow
+.skillset
+    min-height: 664px
+    background-color: $base_black
+    .skillset_content
+        display: grid
+        grid-template-columns: 30% 70%
+        grid-template-rows: 70px 260px 260px
+        .skillset_title
+            grid-column: 1 
+            grid-row: 2
+            display: flex
+            align-items: flex-start
+            h2
+                @include h2_web 
+                color: $text
+                cursor: default
+                transition: all .5s ease
+                &:hover
+                    // transform: scaleZ(0.8) scaleZ(1.07)
+                    color: $green_accent
+        .skillset_subtitle
+            grid-column: 1 
+            grid-row: 2
+            display: flex
+            align-items: flex-end
+            p 
+                @include pargraph_web 
+                color: $light_grey
+                transition: all .5s ease
+                &:hover
+                    transform: scale(1.08)
+                    color: $green_accent
+        .skillset_inner
+            grid-column: 2 
+            grid-row: 2 / 2 span
+            display: flex
+            flex-direction: row
+            flex-wrap: wrap
+            align-items: center
+            justify-content: space-around
+            .skillset_item
+                display: grid
+                justify-items: end
+                gap: 17px
+                h3  
+                    @include skillset_hover
+                p 
+                    @include pargraph_small_web 
+                    color: $light_grey
+.slider
+    padding: 10px
+    min-height: 180px
+    background-color: $base_black
+    overflow: hidden
+    position: relative
+    .slider_items
+        display: flex
+        flex-direction: column
+        flex-wrap: wrap
+        justify-content: space-between
+        align-items: center
+        position: absolute
+        transform: translateX(-7%)
+        .item
+            display: flex
+            justify-content: center
+            align-items: center
+            min-width: 400px
+            min-height: 140px
+            border: 1px solid $dark_grey
+            transition: all .5s ease
+            &:hover
+                transform: scale(1.02)
+                border: 5px solid
+                border-color: $blue_accent
+.work
+    padding-top: 100px
+    min-height: 1900px
+    background-color: $base_black
+    .work_content
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-auto-rows: 20px 210px 500px 700px 80px
+        gap: 20px
+        grid-row-gap: 17px
+        .work_subtitle
+            grid-column: 1 
+            grid-row: 1
+            display: flex
+            justify-content: flex-start
+            align-items: flex-end
+            p 
+                @include subtitle_hover
+        .work_title 
+            grid-column: 1 
+            grid-row: 2
+            display: flex
+            justify-content: flex-start
+            align-items: flex-start
+            h2 
+                @include h2_web 
+                color: $text
+        .work_items_left
+            grid-column: 1 
+            grid-row: 3 / 4 span
+            min-height: 800px
+            display: flex
+            flex-direction: column
+            gap: 20px
+            .work_item
+                min-height: 650px
+                display: flex
+                justify-content: center
+                flex-wrap: wrap
+                flex-direction: row
+                background-color: $level_1
+                .work_img
+                    width: 100%
+                    height: 400px
+                    object-fit: contain
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                        @include box_shadow
+                .work_descr_text
+                    display: flex
+                    justify-content: flex-start
+                    flex-direction: column
+                    flex-wrap: wrap 
+                    align-content: center
+                    align-items: flex-start
+                    gap: 22px
+                    h3
+                        @include h3_web
+                        color: $text
+                    p
+                        @include pargraph_web
+                        color: $dark_grey
+        .work_items_right
+            grid-column: 2 
+            grid-row: 1 / 2 span
+            max-height: 800px
+            display: flex
+            flex-direction: column
+            gap: 20px
+            .work_item
+                min-height: 650px
+                display: flex
+                justify-content: center
+                flex-wrap: wrap
+                flex-direction: row
+                background-color: $level_1
+                .work_img
+                    width: 100%
+                    height: 400px
+                    object-fit: contain
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                        @include box_shadow
+                .work_descr_text
+                    display: flex
+                    justify-content: flex-start
+                    flex-direction: column
+                    flex-wrap: wrap 
+                    align-content: center
+                    align-items: flex-start
+                    gap: 22px
+                    h3
+                        @include h3_web
+                        color: $text
+                    p
+                        @include pargraph_web
+                        color: $dark_grey
+        .work_btn
+            grid-column: 2
+            grid-row: 5
+            display: flex
+            justify-content: center
+            align-items: flex-end
+            a
+                @include button
+                color: $text
+                transition: all .5s ease
+.instagram
+    min-height: 600px
+    background-color: $peach_accent
+    .instagram_content
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-template-rows: 200px 230px 170px
+        .insta_title
+            grid-column: 1
+            grid-row: 1 
+            display: flex
+            align-items: flex-end
+            h2 
+                @include h2_web 
+                color: $base_black
+        .insta_subtitle
+            grid-column: 1 
+            grid-row: 2 / 3
+            display: flex
+            align-items: center
+            position: relative
+            p 
+                @include pargraph_web
+                color: $dark_grey
+        .insta_btn
+            grid-column: 1 
+            grid-row: 3 / 3
+            display: flex
+            align-items: center
+            a
+                @include a_link
+        .insta_img
+            grid-column: 2
+            grid-row: 1 span
+            display: flex
+            img
+                min-height: 600px
+                object-fit: cover
+                @include box-shadow
+.dribbble
+    min-height: 1248px
+    background-color: $base_black
+    .dribbble_content 
+        display: grid
+        grid-template-columns: 100%
+        grid-template-rows: 450px 1110px
+        .drib_main_text
+            display: flex
+            justify-content: space-evenly
+            flex-direction: column
+            .drib_title
+                grid-column: 1 
+                grid-row: 1
+                h2 
+                    @include h2_web 
+                    color: $text
+            .drib_subtitle
+                grid-column: 1 
+                grid-row: 1 
+                p 
+                    @include pargraph_web 
+                    color: $dark_grey 
+            .drib_btn 
+                grid-column: 1 
+                grid-row: 1
+                display: flex
+                a
+                    @include a_link 
+                    color: $text
+        .drib_img 
+            grid-column: 1 
+            grid-row: 2 
+            width: 100%
+            max-height: 640px
+            object-fit: contain
+            img
+                width: 100%
+                // min-height: 640px
+                object-fit: cover
+                @include box-shadow
+.about
+    min-height: 2800px
+    background-color: $base_black
+    .about_content
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-template-rows: 1fr
+        .about_main_text
+            grid-column: 1 
+            grid-row: 1
+            display: flex
+            justify-content: flex-start
+            flex-direction: column
+            gap: 50px
+            .about_title
+                @include h2_web 
+                color: $text
+            .about_subtitle
+                @include pargraph_web 
+                color: $dark_grey 
+            .about_btn
+                display: flex
+                a 
+                    @include a_link 
+                    color: $text
+        .about_inner
+            grid-column: 2 / 2
+            grid-row: 1
+            min-height: 830px
+            display: flex
+            flex-direction: column
+            gap: 50px
+            .about_item
+                min-height: 830px
+                display: flex
+                justify-content: space-between
+                flex-wrap: wrap
+                flex-direction: column
+                background-color: $base_black
+                border: 1px solid $light_grey
+                gap: -5px
+                .about_img
+                    width: 100%
+                    min-height: 500px
+                    object-fit: contain
+                    img
+                        width: auto
+                        height: 100%
+                        object-fit: cover
+                        @include box_shadow
+            .about_descr_text
+                display: flex
+                justify-content: center
+                flex-direction: column
+                flex-wrap: wrap 
+                align-content: center
+                align-items: flex-start
+                margin: 10% auto
+                gap: 22px
+                h3
+                    @include h3_web 
+                    color: $text
+                h4 
+                    @include about_hover
+                p 
+                    @include pargraph_web 
+                    color: $dark_grey
+.photo
+    min-height: 959px
+    background-color: $base_black
+    .photo_content
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-auto-rows: 200px 100px 500px 1fr
+        .photo_text
+            grid-column: 1 / 2 
+            grid-row: 1 / 3 
+            display: flex
+            flex-direction: column
+            gap: 20px
+            h2 
+                @include h2_web 
+                color: $text
+            p 
+                @include pargraph_web 
+                color: $light_grey
+        .photo_tabs
+            grid-column: 1 
+            grid-row: 2 
+            display: flex
+            flex-direction: row
+            flex-wrap: wrap
+            justify-content: flex-start
+            align-content: center
+            gap: 40px
+            button
+                @include button_form_tabs     
+        .photo_item
+            grid-column: 1 / 2 span
+            grid-row: 3 span
+            min-height: 800px
+            .tabs_item:not(._active)
+                display: none
+            .tabs_item
+                display: flex
+                justify-content: space-between
+                flex-direction: row
+                flex-wrap: wrap
+                min-height: 400px
+                min-width: 300px
+                width: auto
+                height: 60%
+                object-fit: contain
+                img 
+                    max-width: 300px
+                    height: 100%
+                    object-fit: cover
+.form
+    min-height: 600px
+    background-color: $base_black  
+    .form_content
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-template-rows: 200px 300px
+        .form_text
+            grid-column: 1 / 2
+            grid-row: 1 / 2
+            display: flex
+            flex-direction: column
+            justify-content: flex-start
+            gap: 30px
+            h2 
+                @include h2_web 
+                color: $text 
+            p
+                @include pargraph_web 
+                color: $dark_grey
+        .form_request
+            grid-column: 2 / 2
+            grid-row: 1 / 2 span
+            .inner_form
+                display: flex
+                flex-direction: column
+                flex-wrap: wrap
+                align-content: flex-start
+                gap: 40px
+                // label
+                //     display: flex
+                //     @include pargraph_small_web
+                //     color: $text
+                //     transform: translateY(-10px)              
+                .input_name
+                    min-width: 500px
+                    min-height: 50px
+                    color: $text
+                    border: none
+                    background-color: $level_1
+                    &:focus
+                        outline: 1px solid $blue_accent
+                    &::placeholder
+                        position: absolute
+                        z-index: 2
+                        transition: all .5s ease
+                        @include pargraph_web
+                        color: $text
+                    &:focus::placeholder
+                        transform: translateY(40px)
+                        color: $blue_accent 
+                .input_email
+                    min-width: 500px
+                    min-height: 50px
+                    color: $text
+                    background-color: $level_1
+                    border: none
+                    &:focus
+                        outline: 1px solid $blue_accent
+                    &::placeholder
+                        position: absolute
+                        z-index: 2
+                        transition: all .5s ease
+                        @include pargraph_web
+                        color: $text
+                    &:focus::placeholder
+                        transform: translateY(40px)
+                        color: $blue_accent 
+                .input_message
+                    min-width: 500px
+                    min-height: 100px
+                    color: $text
+                    background-color: $level_1
+                    border: none
+                    &:focus 
+                       outline: 1px solid $blue_accent
+                    &::placeholder
+                        position: absolute
+                        z-index: 2
+                        transition: all .5s ease
+                        @include pargraph_web
+                        color: $text
+                    &:focus::placeholder
+                        transform: translateY(60px)
+                        color: $blue_accent 
+                .label_btn
+                    @include form_btn
+                .hidden_form
+                    color: $text
+                    display: none
+.footer
+    min-height: 400px
+    background-color: $level_1
+    .footer_content
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-template-rows: 300px 50px
+        .footer_logo
+            grid-column: 1 
+            grid-row: 1
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            transform: translateY(-70px)
+        .footer_icons
+            grid-column: 1 
+            grid-row: 1
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            gap: 20px
+            img 
+                max-width: 40px
+        .footer_copiright 
+            grid-column: 1 
+            grid-row: 2
+            p 
+                @include pargraph_small_web 
+                color: $light_grey
+        .footer_nav 
+            grid-column: 2 
+            grid-row: 1
+            display: flex
+            align-content: center
+            flex-wrap: wrap
+            justify-content: space-around
+            align-items: flex-start
+            .nav_left
+                display: flex
+                flex-direction: column
+                gap: 20px
+                a 
+                    @include link_footer 
+            .nav_right 
+                display: flex
+                flex-direction: column
+                gap: 20px
+                a 
+                    @include link_footer 
+
