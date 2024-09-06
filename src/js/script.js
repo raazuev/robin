@@ -130,22 +130,26 @@ async function handleFormSubmit(event) {
     }
 }
 
-// function onError(error) {
-//     alert(error.message)
-// }
+function onError(error) {
+    alert(error.message)
+}
 
-// async function handleFormSubmit(event) {
-//     event.preventDefault()
-//     const data = serializeForm(event.target)
+async function handleFormSubmit(event) {
+    event.preventDefault();
+    const data = serializeForm(event.target);
 
-//     toggleLoader()
+    toggleLoader();
 
-//     const { status, error } = await sendData(data)
-//     toggleLoader()
+    const { status, error } = await sendData(data);
+    toggleLoader();
 
-//     if (status === 200) {
-//         onSuccess(event.target)
-//     }   else {
-//         onError(error)
-//     } 
-// }
+    if (status === 200) {
+        onSuccess(event.target);
+    }   else {
+            onError(error || new Error('Unknown error occurred'));
+    } 
+}
+
+function onError(error) {
+    alert(error.message || 'An error occurred');
+}
